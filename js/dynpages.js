@@ -35,6 +35,7 @@ function jsonURI(name) {
 function getParams() {
 	let params = {"p": "index"};
 	let str_params = window.location.search.substr(1);
+	params["uri"] = window.location.href;
 	str_params = str_params.split("&");
 
 	str_params.forEach( function(elem){
