@@ -1,1 +1,56 @@
-Hello World
+<!doctype html>
+<!--TODO : index page -->
+<!--TODO : validate JSON -->
+<!--TODO : content -->
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>SkepticDB</title>
+	<script src="js/jquery-3.2.1.min.js"/>
+	<script>
+		console.log("oo");
+	</script>
+	<script>
+		let params = getParams();
+		downloadJSON(
+				params["p"],
+				function(jsonData){
+					downloadHTML(jsonData["@type"], function(htmlData) {
+						$("#content").html(htmlData);
+init(jsonData);
+					});
+				});
+
+		function downloadHTML(name, callback) {
+			$.get(htmlURI(name), callback);
+		}
+
+		function downloadJSON(name, callback) {
+			$.get(jsonURI(name), callback);
+		}
+
+		function htmlURI(name){
+			return "html/" + name.toLowerCase() + ".html";
+		}
+
+		function jsonURI(name) {
+			return "json/" + name + ".json";
+		}
+
+		function getParams() {
+			let params = {"p": "index"};
+			let str_params = window.location.search.substr(1);
+			str_params = str_params.split("&");
+
+			str_params.forEach( function(elem){
+				param = elem.split("=");
+				params[param[0]] = param[1];
+			});
+			return params;
+		}
+	</script>
+</head>
+<body>
+	<div id="content"></div>
+</body>
+</html>
