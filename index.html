@@ -14,10 +14,15 @@
 	<script>
 		console.log("running");
 		let params = getParams();
+
+		if(param["verify"] === true)
+			preload_allSchemas(ajv);
+
 		downloadJSON(
 				params["p"],
 				function(jsonData){
-					verifyJSON(jsonData);
+					if(param["verify"] === true)
+						verifyJSON(jsonData);
 					downloadHTML(jsonData["@type"], function(htmlData) {
 						console.log(htmlData);
 						setHTML(htmlData, jsonData);

@@ -34,6 +34,8 @@ function preload_schemas(avj, context, types) {
 	});
 }
 
-context = "https://skepticdb.github.io/json-schema/";
-types = ["entity", "member", "organization", "person"];
-preload_schemas(ajv,context, types);
+function preload_allSchemas(ajv) {
+	context = "https://skepticdb.github.io/json-schema/";
+	types = ["entity", "member", "organization", "person"];
+	preload_schemas(ajv,context, types);
+}
