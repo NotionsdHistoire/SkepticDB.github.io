@@ -12,7 +12,8 @@
 	<script src="js/validator.js"></script>
 	<script src="js/dynpages.js"></script>
 	<script>
-		console.log("running");
+		if(param["verify"] === true)
+			console.log("running");
 		let params = getParams();
 
 		if(param["verify"] === true)
@@ -24,7 +25,9 @@
 					if(param["verify"] === true)
 						verifyJSON(jsonData);
 					downloadHTML(jsonData["@type"], function(htmlData) {
-						console.log(htmlData);
+						
+						if(param["verify"] === true)
+							console.log(htmlData);
 						setHTML(htmlData, jsonData);
 					});
 				});
