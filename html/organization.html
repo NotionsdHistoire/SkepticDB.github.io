@@ -1,6 +1,52 @@
 Nom : <v>name</v><br/>
 Surnom : <v>surname</v><br/>
+<br/>
+Medias:
+<ul id="medias">
+</ul>
+Membres (TODO) :
+<ul id="members">
+</ul>
 <script>
 function init(jsonData){
+
+	let members = jsonData["members"];
+	members.forEach(function(elem){
+		$("#members").append("<li><a id='' href='"+elem["uri-entity"]+"'>surname</a> (role-TODO)</li>");
+	});
+
+	let medias = jsonData["medias"];
+	medias.forEach(function(elem){
+		$("#medias").append(mediaUL(elem));
+	});
+
+	//TODO : fetch
+	//TODO : complete TeB
+	//TODO : json-schema
+}
+
+
+function mediaUL(elem) {
+
+	let link = "";
+	let content = "";
+	let post = " (" + elem["@type"] + ")";
+
+	switch( elem["@type"] ) {
+		case "Media:Youtube":
+			link = "https://www.youtube.com/user/" + elem["channel-name"];
+			content = elem["channel-name"];
+		break;
+
+		case "Media:Facebook":
+
+			link = "https://www.facebook.com/" + elem["account-name"];
+			content = elem["account-name"];
+		break;
+		
+
+	}
+
+	return "<li><a id='' href='"+link+"'>"+content+"</a>"+post+"</li>";
 }
 </script>

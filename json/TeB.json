@@ -2,5 +2,13 @@
 	"@context": "https://skepticdb.github.io/json-schema/",
 	"@type": "organization",
 	"name": "La Tronche en Biais",
-	"surname": "TeB"
+	"surname": "TeB",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "TroncheEnBiais"},
+		{"@type": "Media:Facebook", "account-name": "thetroncheenbiais"}
+	]
 }
