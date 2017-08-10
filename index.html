@@ -12,17 +12,17 @@
 	<script src="js/validator.js"></script>
 	<script src="js/dynpages.js"></script>
 	<script>
-		if(param["verify"] === true)
-			console.log("running");
 		let params = getParams();
+		if(params["verify"] === true)
+			console.log("running");
 
-		if(param["verify"] === true)
+		if(params["verify"] === true)
 			preload_allSchemas(ajv);
 
 		downloadJSON(
 				params["p"],
 				function(jsonData){
-					if(param["verify"] === true)
+					if(params["verify"] === true)
 						verifyJSON(jsonData);
 					downloadHTML(jsonData["@type"], function(htmlData) {
 						
