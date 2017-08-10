@@ -34,6 +34,6 @@ function preload_schemas(avj, context, types) {
 	});
 }
 
-context = "http://localhost/SkepticDB.github.io/json-schema/";
+context = "http://SkepticDB.github.io/json-schema/";
 types = ["entity", "member", "organization", "person"];
 preload_schemas(ajv,context, types);
