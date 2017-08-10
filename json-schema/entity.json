@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-06/schema#",
-	"id": "https://SkepticDB.github.io/json-schema/entity.json",
+	"id": "https://skepticdb.github.io/json-schema/entity.json",
 
 	"title": "Entity",
 	"type": "object",
