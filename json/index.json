@@ -1,4 +1,7 @@
 {
 	"@type": "Index",
-	"ForTest": "ForTest"
+	"pages":[
+		"SDB",
+		"TeB"
+	]
 }

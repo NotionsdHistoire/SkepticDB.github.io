@@ -1,7 +1,9 @@
-<p>Hello World</p>
-<div id="ForTest"/>
+<p>Liste des entités sceptiques connues :</p>
+<ul id="list"></ul>
 <script>
 function init(jsonData){
-	$("#ForTest").html(jsonData["ForTest"]);
+	jsonData["pages"].sort().forEach(function(elem){
+		$("#list").append("<li><a href='?p="+elem+"'>"+elem+"</a></li>");
+	});
 }
 </script>
