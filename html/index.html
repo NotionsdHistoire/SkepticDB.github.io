@@ -3,7 +3,7 @@
 <script>
 function init(jsonData){
 	jsonData["pages"].sort().forEach(function(elem){
-		$("#list").append("<li><a href='?p="+elem+"'>"+elem+"</a></li>");
+		$("#list").append("<li><a href='?json="+elem+"'>"+elem+"</a></li>");
 	});
 }
 </script>

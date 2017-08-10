@@ -1,5 +1,4 @@
 <!doctype html>
-<!--TODO bootstrap -->
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
@@ -31,6 +30,7 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="https://github.com/SkepticDB/SkepticDB.github.io/wiki">Wiki</a></li>
 					<li><a href="https://github.com/SkepticDB/">Repository</a></li>
 				</ul>
 				<form class="navbar-form navbar-right">
@@ -45,7 +45,12 @@
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
 					<li><a href="?">Accueil</a></li>
-					<li><a href="?p=index">Liste des pages</a></li>
+					<li><a href="?json=index">Chaînes Youtube (TODO)</a></li>
+					<li><a href="?json=index">Sites (TODO)</a></li>
+					<li><a href="?json=index">Groupes Facebook (TODO)</a></li>
+					<li><a href="?json=index">Comptes Twitters (TODO)</a></li>
+					<li><a href="?page=map">Carte sceptique</a></li>
+					<li><a href="?json=index">Liste des données</a></li>
 					<!-- <li><a href="#">Reports</a></li>
 					<li><a href="#">Analytics</a></li>
 					<li><a href="#">Export</a></li> -->
@@ -96,18 +101,51 @@
 			}
 		});
 
-		downloadJSON(
-				params["p"],
-				function(jsonData){
-					if(params["verify"] === "true")
-						verifyJSON(jsonData);
-					downloadHTML(jsonData["@type"], function(htmlData) {
+		if( "json" in params) {
+
+			downloadJSON(
+					params["json"],
+					function(jsonData){
+
+						if(params["verify"] === "true")
+							verifyJSON(jsonData);
 						
-						if(param["verify"] === true)
-							console.log(htmlData);
-						setHTML(htmlData, jsonData);
+						downloadHTML(jsonData["@type"], function(htmlData) {
+						
+							if(param["verify"] === true)
+								console.log(htmlData);
+							setHTML(htmlData, jsonData);
+						});
 					});
-				});
+		} else {
+
+			if(! ("page" in params) ) {
+				params["page"] = "about";
+			}
+
+			downloadHTML(params["page"], function(htmlData) {
+						
+				if(param["verify"] === true)
+					console.log(htmlData);
+				setHTML(htmlData, null);
+			});
+		}
 	</script>
+	<!--TODO
+
+		TODO Accueil
+		TODO Wiki
+		TODO Carte Sceptique : intégration "rapide".
+		TODO Liste des XXXX (faire évoluer)
+
+		TODO Contact : Romain Bou / Zététique (groupe Facebook) - carte Zététique
+		TODO Contact : (cf les chaînes Youtube auxquelles je suis abonné + menace théoriste).
+
+		TODO Sources : http://laelith.fr/Zet/Galaxie-Sceptique-Francophone/
+		=> Hygiène Mentale
+
+		https://chroniqueszetetiques.wordpress.com/la-sphere-sceptique-francophone/
+		=> Les Chroniques Zététiques
+	-->
 </body>
 </html>

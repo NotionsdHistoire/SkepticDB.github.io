@@ -1,0 +1,6 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "La Tronche en Biais",
+	"surname": "TeB"
+}
