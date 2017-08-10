@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"id": "http://SkepticDB.github.io/json-schema/member.json",
+
+	"title": "Member",
+	"type": "object",
+	"properties": {
+		"uri-entity": {
+			"description": "",
+			"type": "string",
+			"format": "uri"
+		},
+		"roles": {
+			"description": "",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["roleA", "roleB"]
+			},
+			"uniqueItems": true,
+			"minItems": 1
+		}
+	},
+	"required": ["uri", "roles"]
+}

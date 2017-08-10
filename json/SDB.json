@@ -1,0 +1,6 @@
+{
+	"@context": "http://SkepticDB.github.io/json-schema/",
+	"@type": "organization",
+	"name": "SkepticDB",
+	"surname": "SDB"
+}

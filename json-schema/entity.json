@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"id": "http://SkepticDB.github.io/json-schema/entity.json",
+
+	"title": "Entity",
+	"type": "object",
+	"properties": {
+		"name": {
+			"description": "",
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 32
+		},
+		"surname": {
+			"description": "",
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 32
+		}
+	},
+	"required": ["name", "surname"]
+}

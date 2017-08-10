@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"id": "http://SkepticDB.github.io/json-schema/organization.json",
+
+	"title": "Organization",
+	"type": "object",
+	"$ref": "entity.json",
+	"properties": {
+		"members":{
+			"description": "",
+			"type": "array",
+			"items": {
+				"$ref": "member.json"
+			},
+			"uniqueItems": true
+		}
+	},
+	"required": ["members"]
+}
