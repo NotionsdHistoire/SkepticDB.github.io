@@ -5,36 +5,26 @@ function goto(uri) {
 
 function load(uri) {
 
-	params = getParams(uri);
+	let params = getParams(uri);
 	
 	hightlighNavSideBarLink();
 
+	let htmlPage = "about";
+	if("page" in params)
+		htmlPage = params["page"];
+
+	let jsonData = null;
 	if( "json" in params) {
 
-		var jsonData = json["/" + params['json'] + ".json"];
+		jsonData = json["/" + params['json'] + ".json"];
 		//if(params["verify"] === "true")
 		//	verifyJSON(jsonData);
 
-		downloadHTML(jsonData["@type"], function(htmlData) {		
-			//if(param["verify"] === true)
-			//	console.log(htmlData);
-			setHTML(htmlData, jsonData);
-			linksToOnclick();
-		});
-	} else {
-
-		if(! ("page" in params) ) {
-			params["page"] = "about";
-		}
-
-		downloadHTML(params["page"], function(htmlData) {
-					
-			//if(param["verify"] === true)
-			//	console.log(htmlData);
-			setHTML(htmlData, null);
-			linksToOnclick();
-		});
+		htmlPage = jsonData["@type"].toLowerCase();
 	}
+
+	htmlData = html["/" + htmlPage + ".html"];
+	setHTML(htmlData, jsonData);
 	linksToOnclick();
 }
 
@@ -116,6 +106,8 @@ function getParams(uri) {
 	str_params = str_params.split("&");
 
 	str_params.forEach( function(elem){
+		if(! elem)
+			return;
 		param = elem.split("=");
 		params[param[0]] = param[1];
 	});
