@@ -82,60 +82,26 @@
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
+	<script src="php/all.json.js"></script>
 	<script src="js/ajv.min.js"></script>
 	<script src="js/validator.js"></script>
 	<script src="js/dynpages.js"></script>
 	<script>
-		let params = getParams();
-		if(params["verify"] === "true")
-			console.log("running");
 
-		if(params["verify"] === "true")
-			preload_allSchemas(ajv);
-
-		$(".nav-sidebar li").each(function(index, elem) {
-			elem = $(elem);
-			link = elem.find("a")[0];
-			if(link.href == params["uri"]) {
-				elem.addClass("active");
-			}
+		$(function() {
+			params = getParams(window.location.search);
+			linksToOnclick();
+			goto(params["uri"]);
 		});
-
-		if( "json" in params) {
-
-			downloadJSON(
-					params["json"],
-					function(jsonData){
-
-						if(params["verify"] === "true")
-							verifyJSON(jsonData);
-						
-						downloadHTML(jsonData["@type"], function(htmlData) {
-						
-							if(param["verify"] === true)
-								console.log(htmlData);
-							setHTML(htmlData, jsonData);
-						});
-					});
-		} else {
-
-			if(! ("page" in params) ) {
-				params["page"] = "about";
-			}
-
-			downloadHTML(params["page"], function(htmlData) {
-						
-				if(param["verify"] === true)
-					console.log(htmlData);
-				setHTML(htmlData, null);
-			});
-		}
+		//if(params["verify"] === "true")
+		//	console.log("running");
+		//if(params["verify"] === "true")
+		//	preload_allSchemas(ajv);
 	</script>
 	<!--TODO
 		
 		TODO Liste des XXXX (faire évoluer)
-			-> Python fusionner JSON
-			-> simuler pages (JS history)
+			-> pre-load HTML
 . 
 		TODO json-schema
 			-> $ref bug
