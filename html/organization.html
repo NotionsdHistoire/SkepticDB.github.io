@@ -19,10 +19,6 @@ function init(jsonData){
 	medias.forEach(function(elem){
 		$("#medias").append(mediaUL(elem));
 	});
-
-	//TODO : fetch
-	//TODO : complete TeB
-	//TODO : json-schema
 }
 
 
@@ -44,7 +40,16 @@ function mediaUL(elem) {
 			content = elem["account-name"];
 		break;
 		
+		case "Media:Twitter":
+			link = "https://twitter.com/" + elem["account-name"];
+			content = elem["account-name"];
+		break;
 
+		case "Media:Site":
+			link = elem["url"];
+			content = elem["url"];
+		break;
+			
 	}
 
 	return "<li><a id='' href='"+link+"'>"+content+"</a>"+post+"</li>";

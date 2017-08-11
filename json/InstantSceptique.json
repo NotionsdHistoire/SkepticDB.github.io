@@ -1,0 +1,14 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Instant Sceptique",
+	"surname": "InstantSceptique",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UC2bt55_J3pQCImOfjO17Q-w"},
+		{"@type": "Media:Twitter", "account-name": "InstantSceptic"}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Loni Ptaclusp",
+	"surname": "LoniPtaclusp",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCS_k1dqDI3vl-iYJccbvlaQ"}
+	]
+}

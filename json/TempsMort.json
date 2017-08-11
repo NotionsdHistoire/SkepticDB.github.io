@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Temps Mort",
+	"surname": "TempsMort",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCJLsfsSpIiUBPvYYSUAclrw"},
+		{"@type": "Media:Facebook", "account-name": "tpsmort"},
+		{"@type": "Media:Twitter", "account-name": "tpsmort"}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "La statistique expliquée à mon chat",
+	"surname": "LaStatistiqueExpliqueeAMonChat",
+	"members": [
+		{"uri-entity":"Laura Maugeri", "roles":["infographiste"]},
+		{"uri-entity":"Gwenaël Grisi", "roles":["compositeur"]},
+		{"uri-entity":"Nathan Uyttendaele", "roles":["docteur en sciences, spécialisé dans la statistique"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCWty1tzwZW_ZNSp5GVGteaA"},
+		{"@type": "Media:Facebook", "account-name": "amisdalbert"},
+		{"@type": "Media:Twitter", "account-name": "amisdalbert"}
+	]
+}

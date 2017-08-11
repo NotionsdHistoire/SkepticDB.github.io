@@ -1,0 +1,16 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Science Etonnante",
+	"surname": "ScienceEtonnante",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "ScienceEtonnante"},
+		{"@type": "Media:Facebook", "account-name": "scienceetonnante"},
+		{"@type": "Media:Twitter", "account-name": "dlouapre"},
+		{"@type": "Media:Site", "url": "http://sciencetonnante.wordpress.com/"}
+	]
+}

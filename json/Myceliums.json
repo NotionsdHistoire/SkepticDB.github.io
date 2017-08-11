@@ -1,0 +1,16 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Mycéliums",
+	"surname": "Myceliums",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCJ9kIKgFuAB23GkEko1hHDg"},
+		{"@type": "Media:Facebook", "account-name": "myceliums"},
+		{"@type": "Media:Twitter", "account-name": "myceliums"},
+		{"@type": "Media:Site", "url": "http://myceliums.fr/"}
+	]
+}

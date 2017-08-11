@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Psynect",
+	"surname": "Psynect",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCwWCBw7M0kskNlv0coVP53w"},
+		{"@type": "Media:Facebook", "account-name": "psynect"},
+		{"@type": "Media:Twitter", "account-name": "Psynect"}
+	]
+}

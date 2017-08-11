@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Le DeBunKer des Etoiles",
+	"surname": "LeDebunkerDesEtoiles",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UC_56vSO35nctESDan8agevg"},
+		{"@type": "Media:Facebook", "account-name": "debunkerdesetoiles"},
+		{"@type": "Media:Twitter", "account-name": "DeBunKerEtoiles"}
+	]
+}

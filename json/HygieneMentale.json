@@ -1,0 +1,16 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Hygiène Mentale",
+	"surname": "HygieneMentale",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "HygieneMentale"},
+		{"@type": "Media:Facebook", "account-name": "HygieneMentale"},
+		{"@type": "Media:Twitter", "account-name": "HygieneMentale"},
+		{"@type": "Media:Site", "url": "http://laelith.fr/Zet"}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Projet Utopia",
+	"surname": "ProjetUtopia",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCoqAyMfi7YZUFw3L8WumcLA"},
+		{"@type": "Media:Facebook", "account-name": "ProjetUtopia"},
+		{"@type": "Media:Twitter", "account-name": "projetutopia"}
+	]
+}
