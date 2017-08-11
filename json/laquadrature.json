@@ -1,0 +1,16 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "La Quadrature du Net",
+	"surname": "laquadrature",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "laquadrature"},
+		{"@type": "Media:Facebook", "account-name": "laquad.dunet"},
+		{"@type": "Media:Twitter", "account-name": "laquadrature"},
+		{"@type": "Media:Site", "url": "http://www.laquadrature.net"}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "DEFAKATOR",
+	"surname": "DEFAKATOR",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCU0FhLr6fr7U9GOn6OiQHpQ"},
+		{"@type": "Media:Facebook", "account-name": "DEFAKATOR"},
+		{"@type": "Media:Twitter", "account-name": "DEFAKATOR_Off"}
+	]
+}

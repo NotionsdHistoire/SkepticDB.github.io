@@ -9,6 +9,7 @@
 	],
 	"medias": [
 		{"@type": "Media:Youtube", "channel-name": "TroncheEnBiais"},
-		{"@type": "Media:Facebook", "account-name": "thetroncheenbiais"}
+		{"@type": "Media:Facebook", "account-name": "thetroncheenbiais"},
+		{"@type": "Media:Site", "url": "www.menace-theoriste.fr"}
 	]
 }

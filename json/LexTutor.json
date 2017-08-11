@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Lex Tutor",
+	"surname": "LexTutor",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "NunyaFR"},
+		{"@type": "Media:Facebook", "account-name": "LexTutor"},
+		{"@type": "Media:Twitter", "account-name": "nunyafr"}
+	]
+}
