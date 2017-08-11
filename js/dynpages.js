@@ -19,6 +19,7 @@ function load(uri) {
 			//if(param["verify"] === true)
 			//	console.log(htmlData);
 			setHTML(htmlData, jsonData);
+			linksToOnclick();
 		});
 	} else {
 
@@ -31,6 +32,7 @@ function load(uri) {
 			//if(param["verify"] === true)
 			//	console.log(htmlData);
 			setHTML(htmlData, null);
+			linksToOnclick();
 		});
 	}
 	linksToOnclick();
