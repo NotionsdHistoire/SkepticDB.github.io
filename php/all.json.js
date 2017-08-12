@@ -1,4 +1,18 @@
 json = {
+"/LaTheiereCosmique.json":{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "La Théière Cosmique",
+	"surname": "LaTheiereCosmique",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Site", "url": "https://theierecosmique.com/"}
+	]
+}
+,
 "/laquadrature.json":{
 	"@context": "https://skepticdb.github.io/json-schema/",
 	"@type": "organization",
