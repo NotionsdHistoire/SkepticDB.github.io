@@ -23,10 +23,15 @@ function load(uri) {
 		//if(params["verify"] === "true")
 		//	verifyJSON(jsonData);
 
-		htmlPage = jsonData["@type"].toLowerCase();
+		if( jsonData === undefined)
+			htmlPage = "404";
+		else
+			htmlPage = jsonData["@type"].toLowerCase();
 	}
 
 	htmlData = html["/" + htmlPage + ".html"];
+	if( htmlData === undefined)
+		htmlData = html["/404.html"];
 	setHTML(htmlData, jsonData);
 	linksToOnclick();
 }
