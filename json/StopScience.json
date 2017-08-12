@@ -1,0 +1,16 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Stop Science",
+	"surname": "StopScience",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "StopScience"},
+		{"@type": "Media:Facebook", "account-name": "Stopscience"},
+		{"@type": "Media:Site", "url": "http://videosciences.cafe-sciences.org/contributeurs/"},
+		{"@type": "Media:Twitter", "account-name": "PaleonewsFrance"}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Balade Mentale",
+	"surname": "BaladeMentale",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCS_7tplUgzJG4DhA16re5Yg"},
+		{"@type": "Media:Facebook", "account-name": "BaladeMentale"},
+		{"@type": "Media:Twitter", "account-name": "BaladeMentale"}
+	]
+}

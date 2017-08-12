@@ -16,6 +16,23 @@ json = {
 	]
 }
 ,
+"/StopScience.json":{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Stop Science",
+	"surname": "StopScience",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "StopScience"},
+		{"@type": "Media:Facebook", "account-name": "Stopscience"},
+		{"@type": "Media:Site", "url": "http://videosciences.cafe-sciences.org/contributeurs/"},
+		{"@type": "Media:Twitter", "account-name": "PaleonewsFrance"}
+	]
+}
+,
 "/Myceliums.json":{
 	"@context": "https://skepticdb.github.io/json-schema/",
 	"@type": "organization",
@@ -33,25 +50,19 @@ json = {
 	]
 }
 ,
-"/index.json":{
-	"@type": "Index",
-	"pages":[
-		"SDB",
-		"TeB",
-		"LaStatistiqueExpliqueeAMonChat",
-		"LeDebunkerDesEtoiles",
-		"HygieneMentale",
-		"LoniPtaclusp",
-		"TempsMort",
-		"Psynect",
-		"ScienceEtonnante",
-		"InstantSceptique",
-		"Myceliums",
-		"ProjetUtopia",
-		"MrSam",
-		"LexTutor",
-		"laquadrature",
-		"DEFAKATOR"
+"/BaladeMentale.json":{
+	"@context": "https://skepticdb.github.io/json-schema/",
+	"@type": "organization",
+	"name": "Balade Mentale",
+	"surname": "BaladeMentale",
+	"members": [
+		{"uri-entity":"TODO", "roles":["TODO"]},
+		{"uri-entity":"TODO", "roles":["TODO"]}
+	],
+	"medias": [
+		{"@type": "Media:Youtube", "channel-name": "UCS_7tplUgzJG4DhA16re5Yg"},
+		{"@type": "Media:Facebook", "account-name": "BaladeMentale"},
+		{"@type": "Media:Twitter", "account-name": "BaladeMentale"}
 	]
 }
 ,
@@ -212,7 +223,7 @@ json = {
 	"medias": [
 		{"@type": "Media:Youtube", "channel-name": "TroncheEnBiais"},
 		{"@type": "Media:Facebook", "account-name": "thetroncheenbiais"},
-		{"@type": "Media:Site", "url": "www.menace-theoriste.fr"}
+		{"@type": "Media:Site", "url": "https://www.menace-theoriste.fr"}
 	]
 }
 ,
