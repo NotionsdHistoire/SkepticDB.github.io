@@ -87,15 +87,12 @@
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
 					<li><a href="?">Accueil</a></li>
-					<li><a href="?json=index">Sites sceptiques (TODO)</a></li>
-					<li><a href="?json=index">Chaînes Youtube (TODO)</a></li>
-					<li><a href="?json=index">Groupes Facebook (TODO)</a></li>
-					<li><a href="?json=index">Comptes Twitters (TODO)</a></li>
+					<li><a href="?page=sites">Sites sceptiques <span id="count_sites"></span></a></li>
+					<li><a href="?page=youtube">Chaînes Youtube <span id="count_youtube"></span></a></li>
+					<li><a href="?page=facebook">Groupes Facebook <span id="count_facebook"></span></a></li>
+					<li><a href="?page=twitter">Comptes Twitters <span id="count_twitter"></span></a></li>
 					<li><a href="?page=map">Carte sceptique</a></li>
 					<li><a href="?search=">Recherche avancée</a></li>
-					<!-- <li><a href="#">Reports</a></li>
-					<li><a href="#">Analytics</a></li>
-					<li><a href="#">Export</a></li> -->
 				</ul>
 				<!--
 				<ul class="nav nav-sidebar">
@@ -132,6 +129,7 @@
 	<script src="dependancies/ajv/js/ajv.min.js"></script>
 	<script src="js/validator.js"></script>
 	<script src="js/dynpages.js"></script>
+	<script src="js/filters.js"></script>
 	<script>
 
 	let availableTags = [];
@@ -211,6 +209,20 @@
 				.append("<li class='list-group-item'>"+item.label+"</li>")
 				.appendTo(ul);
 		};
+
+
+
+		let nb = Object.keys(filterJSON_sites(json)).length;
+		$("#count_sites").html("("+nb+")");
+
+		nb = Object.keys(filterJSON_twitter(json)).length;
+		$("#count_twitter").html("("+nb+")");
+
+		nb = Object.keys(filterJSON_facebook(json)).length;
+		$("#count_facebook").html("("+nb+")");
+
+		nb = Object.keys(filterJSON_youtube(json)).length;
+		$("#count_youtube").html("("+nb+")");
 	});
 	</script>
 	<script>
@@ -230,9 +242,6 @@
 		TODO pages
 			Accueil
 			Recherche
-
-		TODO Liste des XXXX (faire évoluer)
-			+ show nb elements
 		
 		TODO affichage amélioré (+ ajouter contenu)
 		TODO Content

@@ -1,12 +1,11 @@
-<p>Not available yet</p>
-<p>Liste des pages référencées :</p>
+<p>No available yet</p>
 <ul id="list"></ul>
 <script>
 function init(jsonData){
 
-	sortStrKeys(json).forEach(function(elem){
+	json_filtered = filterJSON_facebook(json);
 
-		elem = elem.slice(1, -5);
+	sortStrKeys(json_filtered).forEach(function(elem){
 
 		$("#list").append("<li><a href='?json="+elem+"'>"+elem+"</a></li>");
 	});
