@@ -5,6 +5,8 @@ function goto(uri) {
 
 function load(uri) {
 
+	$("#suggestions").toggle(false);
+
 	let params = getParams(uri);
 	
 	hightlighNavSideBarLink();

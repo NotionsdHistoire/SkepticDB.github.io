@@ -9,12 +9,15 @@
 	<title>SkepticDB</title>
 
 	<!-- Bootstrap -->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="dependancies/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="dependancies/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="bootstrap/css/dashboard.css" rel="stylesheet">
+	<link href="dependancies/bootstrap/css/dashboard.css" rel="stylesheet">
+
+
+	<link href="dependancies/bootstrap/css/advanced-dropdown-search.css" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -26,16 +29,54 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">SkepticDB</a>
+				<a class="navbar-brand" href="?">SkepticDB</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="https://github.com/SkepticDB/SkepticDB.github.io/wiki">Wiki</a></li>
 					<li><a href="https://github.com/SkepticDB/">Repository</a></li>
 				</ul>
+				<!-- SEARCH FORM -->
 				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search... (not available yet)"/>
-				</form>
+					<div class="input-group" id="adv-search">
+						<input id="search" type="text" class="form-control" placeholder="Rechercher..."/>
+						<!--<div id="suggestions" class="dropdown-menu dropdown-menu-left" role="menu"></div> -->
+						<div class="input-group-btn">
+							<div class="btn-group" role="group">
+								<div class="dropdown dropdown-lg">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+									<div class="dropdown-menu dropdown-menu-right" role="menu">
+										<form class="form-horizontal" role="form">
+											(not available yet)
+											<div class="form-group">
+												<label for="filter">Filter by</label>
+												<select class="form-control">
+													<option value="0" selected>All Snippets</option>													<option value="1">Featured</option>
+													<option value="2">Most popular</option>
+													<option value="3">Top rated</option>
+													<option value="4">Most commented</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="contain">Author</label>
+												<input class="form-control" type="text" />
+											</div>
+											<div class="form-group">
+												<label for="contain">Contains the words</label>
+												<input class="form-control" type="text" />
+											</div>
+											<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+										</form>
+									</div>
+								</div>
+								<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<!-- SEARCH FORM END -->
 			</div>
 		</div>
 	</nav>
@@ -69,6 +110,7 @@
 					<li><a href="">Another nav item</a></li>
 				</ul>-->
 			</div>
+
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="content">
 				<p>Chargement de la page (peut prendre un certain temps)...</p>
 			</div>
@@ -76,17 +118,87 @@
 	</div>
 
 	
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="dependancies/jquery/js/jquery-3.2.1.min.js"></script>
+	<script src="dependancies/jquery-ui/jquery-ui.min.js"></script>
+	
+	<script src="dependancies/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="dependancies/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 	<script src="php/all.json.js"></script>
 	<script src="php/all.html.js"></script>
-	<script src="js/ajv.min.js"></script>
+	<script src="dependancies/ajv/js/ajv.min.js"></script>
 	<script src="js/validator.js"></script>
 	<script src="js/dynpages.js"></script>
+	<script>
+
+	let availableTags = [];
+
+	for(let key in json){
+
+		if("name" in json[key]) {
+
+			let elem = {};
+
+			let name = json[key]["name"];
+			elem["label"] = name;
+
+			let jsonPage = key.slice(1, -5);
+			elem["value"] = jsonPage;
+			
+			availableTags.push(elem);
+		}
+
+	}
+
+	$(function() {
+
+		searchInput = $('#search');
+
+		searchInput.on( "trigger", function () {
+			//if (searchInput.val()=='')
+			//	$('#suggestions').empty();
+			return false;
+		});
+
+		searchInput.autocomplete(
+			{
+				search: function(event, ui) {
+				//	$('#suggestions').toggle(false);
+				//	$('#suggestions').empty();
+				},
+				select: function(event, ui){
+					//<a href='?json="+searchContent[item.value]+"' onclick='goto(\""+searchContent[item.value]+"\");'>
+					$('#search').val('');
+					goto("?json=" + ui.item.value);
+					
+					return false;
+				},
+				close: function(){
+				//	$('#suggestions').toggle(false);
+				//	if ($('#search').val()==''){
+				//		$('#suggestions').empty();
+				},
+				minLength: 1,
+        			source: availableTags
+			});
+
+	searchInput.data('ui-autocomplete')._renderItem = function(ul, item) {
+		
+			//$('#suggestions').toggle(true);
+
+			ul.addClass("dropdown-menu");
+			ul.addClass("dropdown-menu-left");
+			// class="dropdown-menu dropdown-menu-left" role="menu"
+
+			return $('<div/>')
+				.data('ui-autocomplete-item', item)
+				.append("<li class='list-group-item'>"+item.label+"</li>")
+				.appendTo(ul);
+		};
+	});
+	</script>
 	<script>
 
 		$(function() {
@@ -102,6 +214,8 @@
 	<!--TODO
 		
 		TODO Liste des XXXX (faire évoluer)
+
+		TODO External links
 . 
 		TODO json-schema
 			-> $ref bug
