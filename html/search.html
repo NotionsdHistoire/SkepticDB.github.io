@@ -1,8 +1,15 @@
+<p>Not available yet</p>
 <p>Liste des pages référencées :</p>
 <ul id="list"></ul>
 <script>
 function init(jsonData){
-	jsonData["pages"].sort().forEach(function(elem){
+
+	keysSorted = Object.keys(json).sort(function(a,b){return json[a]-json[b]});
+
+	keysSorted.forEach(function(elem){
+
+		elem = elem.slice(1, -5);
+
 		$("#list").append("<li><a href='?json="+elem+"'>"+elem+"</a></li>");
 	});
 }

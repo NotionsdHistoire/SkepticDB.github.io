@@ -1,5 +1,6 @@
 function goto(uri) {
-	window.history.pushState({"uri": window.location.href},"", uri);
+
+	window.history.pushState({"uri": uri},"", uri);
 	load(uri);
 }
 
@@ -32,6 +33,7 @@ function load(uri) {
 
 window.onpopstate = function(e){
 	if(e.state){
+		console.log(e.state.uri);
 		load(e.state.uri);
 	}
 };
@@ -41,7 +43,12 @@ function hightlighNavSideBarLink() {
 	$(".nav-sidebar li").each(function(index, elem) {
 		elem = $(elem);
 		let link = elem.find("a")[0];
-		if(link.href == window.location.href)
+
+		currentURL = window.location.href.split("&")[0];
+		linkURL = link.href.split("&")[0];
+		
+
+		if(linkURL == currentURL || linkURL == currentURL + "?")
 			elem.addClass("active");
 		else
 			elem.removeClass("active");
@@ -118,5 +125,9 @@ function getParams(uri) {
 		param = elem.split("=");
 		params[param[0]] = param[1];
 	});
+
+	if( "search" in params )
+		params["page"] = "search";
+
 	return params;
 }
