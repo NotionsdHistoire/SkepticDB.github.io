@@ -55,7 +55,12 @@ function linksToOnclick() {
 	$("a").each(function(index, elem) {
 
 		let parts = elem.href.split("?");
-		if( parts.length != 2 && parts[0] != base)
+
+		if(parts[0] != base) {
+			elem.target="_blank";
+			return;
+		}
+		if( parts.length != 2)
 			return;
 
 		let uri = "?" + parts[1];
