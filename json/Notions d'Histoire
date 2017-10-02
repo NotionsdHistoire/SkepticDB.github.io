@@ -1,0 +1,13 @@
++{ 
+ +	"@context": "https://skepticdb.github.io/json-schema/",
+ +	"@type": "organization",
+ +	"name": "Notions d'Histoire",
+ +	"surname": "Notions d'Histoire",
+ +	"members": [
+ +		{"uri-entity":"TODO", "roles":["TODO"]},
+ +		{"uri-entity":"TODO", "roles":["TODO"]}
+ +	],
+ +	"medias": [
+ +		{"@type": "Media:Site", "url": "https://notionsdhistoire.wordpress.com/"}
+ +	]
+ +}
