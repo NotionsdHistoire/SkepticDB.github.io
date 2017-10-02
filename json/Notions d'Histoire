@@ -8,6 +8,8 @@
  +		{"uri-entity":"TODO", "roles":["TODO"]}
  +	],
  +	"medias": [
+ +		{"@type": "Media:Facebook", "account-name": "Notionsdhistoire"},
  +		{"@type": "Media:Site", "url": "https://notionsdhistoire.wordpress.com/"}
+ +		{"@type": "Media:Twitter", "account-name": "NHistoire"}
  +	]
  +}
